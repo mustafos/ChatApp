@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  SwiftPro
 //
-//  Created by Mustafa Bekirov on 28.12.2022.
+//  Created by Mustafa Bekirov on 15.01.2023.
 //
 
 import UIKit
