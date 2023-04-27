@@ -1,5 +1,9 @@
 import UIKit
 
+protocol AuthenticationControllerProtocol {
+    func checkFormStatus()
+}
+
 class LoginController: UIViewController {
     
     // MARK: – Properties
@@ -85,15 +89,7 @@ class LoginController: UIViewController {
     }
     
     // MARK: – Helpers
-    
-    func checkFormStatus() {
-        if viewModel.formIsValid {
-            loginButton.isEnabled = true
-            loginButton.backgroundColor = .systemRed
-        } else {
-            loginButton.isEnabled = false
-        }
-    }
+
     
     func configureUI() {
         navigationController?.navigationBar.isHidden = true
@@ -123,5 +119,16 @@ class LoginController: UIViewController {
         
         emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+    }
+}
+
+extension LoginController: AuthenticationControllerProtocol {
+    func checkFormStatus() {
+        if viewModel.formIsValid {
+            loginButton.isEnabled = true
+            loginButton.backgroundColor = .systemRed
+        } else {
+            loginButton.isEnabled = false
+        }
     }
 }
