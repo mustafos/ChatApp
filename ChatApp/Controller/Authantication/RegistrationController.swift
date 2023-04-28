@@ -114,11 +114,11 @@ class RegistrationController: UIViewController {
                     
                     Firestore.firestore().collection("users").document(uid).setData(data) { error in
                         if let error = error {
-                            print("DEBUG: Failed upload user data \(error.localizedDescription)")
+                            print("DEBUG: Failed upload user data with error: \(error.localizedDescription)")
                             return
                         }
                         
-                        print("DEBUG: Did create user...")
+                        self.dismiss(animated: true)
                     }
                 }
             }
