@@ -1,6 +1,5 @@
 import UIKit
 import Firebase
-import Foundation
 import FirebaseStorage
 import FirebaseFirestore
 
@@ -25,7 +24,7 @@ struct AuthService {
         
         ref.putData(imageData) { (meta, error) in
             if let error = error {
-                print("DEBUG: Failed to upload image with error \(error.localizedDescription)")
+                completion!(error)
                 return
             }
             
@@ -33,7 +32,7 @@ struct AuthService {
                 guard let profileImageUrl = url?.absoluteString else { return }
                 Auth.auth().createUser(withEmail: credentials.email, password: credentials.password) { (result, error) in
                     if let error = error {
-                        print("DEBUG: Failed to create user with error \(error.localizedDescription)")
+                        completion!(error)
                         return
                     }
                     
