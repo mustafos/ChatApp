@@ -28,6 +28,7 @@
 		6A92B64A29FC09AD00A01706 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 6A92B64929FC09AD00A01706 /* SDWebImage */; };
 		6A92B64D29FC0A2800A01706 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 6A92B64C29FC0A2800A01706 /* JGProgressHUD */; };
 		6A9A376729FAEE6A00809FD4 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9A376629FAEE6A00809FD4 /* RegistrationViewModel.swift */; };
+		6AA7E8F529FEEFBC00C3A31A /* NewMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA7E8F429FEEFBC00C3A31A /* NewMessageController.swift */; };
 		6AA9EC0729FD9370000BE32E /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA9EC0629FD9370000BE32E /* AuthService.swift */; };
 		6AFFA9A729F6F68900EA2BD7 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFFA9A629F6F68900EA2BD7 /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -49,6 +50,7 @@
 		6A714CC529F532AD0000E882 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		6A92B63B29FC087E00A01706 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6A9A376629FAEE6A00809FD4 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		6AA7E8F429FEEFBC00C3A31A /* NewMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageController.swift; sourceTree = "<group>"; };
 		6AA9EC0629FD9370000BE32E /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		6AFFA9A629F6F68900EA2BD7 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,6 +124,7 @@
 			children = (
 				6A41DCD529F4433D006F5420 /* Authantication */,
 				6A553D5F29F2F89600C715AA /* ConversationController.swift */,
+				6AA7E8F429FEEFBC00C3A31A /* NewMessageController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				6A41DCDB29F449D1006F5420 /* Extensions.swift in Sources */,
 				6AFFA9A729F6F68900EA2BD7 /* LoginViewModel.swift in Sources */,
 				6A714CC629F532AD0000E882 /* CustomTextField.swift in Sources */,
+				6AA7E8F529FEEFBC00C3A31A /* NewMessageController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
