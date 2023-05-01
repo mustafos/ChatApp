@@ -73,7 +73,7 @@ class ConversationController: UIViewController {
     func configureUI() {
         view.backgroundColor = .white
         
-        configureNavigationBar()
+        configureNavigationBar(withTitle: "Messages", prefersLargeTitles: true)
         configureTableView()
     
         let image = UIImage(systemName: "person.circle.fill")
@@ -96,25 +96,9 @@ class ConversationController: UIViewController {
         view.addSubview(tableView)
         tableView.frame = view.frame
     }
-    
-    func configureNavigationBar() {
-        let appearance = UINavigationBarAppearance()
-        appearance.configureWithOpaqueBackground()
-        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        appearance.backgroundColor = .systemMint
-        
-        navigationController?.navigationBar.standardAppearance = appearance
-        navigationController?.navigationBar.compactAppearance = appearance
-        navigationController?.navigationBar.scrollEdgeAppearance = appearance
-        
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.title = "Messages"
-        navigationController?.navigationBar.tintColor = .white
-        navigationController?.navigationBar.isTranslucent = true
-        
-        navigationController?.navigationBar.overrideUserInterfaceStyle = .dark
-    }
 }
+
+// MARK: – UITableViewDataSource
 
 extension ConversationController: UITableViewDataSource {
     
@@ -128,6 +112,8 @@ extension ConversationController: UITableViewDataSource {
         return cell
     }
 }
+
+// MARK: – UITableViewDelegate
 
 extension ConversationController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
