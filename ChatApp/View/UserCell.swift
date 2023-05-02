@@ -1,14 +1,7 @@
-//
-//  UserCell.swift
-//  ChatApp
-//
-//  Created by Mustafa Bekirov on 01.05.2023.
-//
-
 import UIKit
 
-let fullname = ["Steve Job", "Tim Cook", "Brian Wood"]
-let fully = fullname.randomElement()
+let fully = Array(arrayLiteral: "Steve Job", "Tim Cook", "Brian Wood", "Callista Ian", "Edwina Zac", "Carreen Kae")
+var fullname = fully.randomElement()
 
 class UserCell: UITableViewCell {
     

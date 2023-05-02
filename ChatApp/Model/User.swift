@@ -1,8 +1,8 @@
-//
-//  User.swift
-//  ChatApp
-//
-//  Created by Mustafa Bekirov on 01.05.2023.
-//
-
 import Foundation
+
+struct User {
+    let uid: String
+    let profileImageUrl: String
+    let username: String
+    let email: String
+}
