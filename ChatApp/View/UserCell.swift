@@ -1,4 +1,5 @@
 import UIKit
+import SDWebImage
 
 let fully = Array(arrayLiteral: "Steve Job", "Tim Cook", "Brian Wood", "Callista Ian", "Edwina Zac", "Carreen Kae")
 var fullname = fully.randomElement()
@@ -6,6 +7,10 @@ var fullname = fully.randomElement()
 class UserCell: UITableViewCell {
     
     // MARK: – Properties
+    
+    var user: User? {
+        didSet { configure() }
+    }
     
     private let profileImageView: UIImageView = {
         let iv = UIImageView()
@@ -50,5 +55,16 @@ class UserCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: – Helpers
+    
+    func configure() {
+        guard let user = user else { return }
+        fullnameLabel.text = fullname
+        usernameLabel.text = user.username
+        
+        guard let url = URL(string: user.profileImageUrl) else { return }
+        profileImageView.sd_setImage(with: url)
     }
 }
