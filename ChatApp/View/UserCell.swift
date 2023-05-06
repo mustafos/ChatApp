@@ -50,7 +50,6 @@ class UserCell: UITableViewCell {
         
         addSubview(stack)
         stack.centerY(inView: profileImageView, leftAnchor: profileImageView.rightAnchor, paddingLeft: 12)
-        
     }
     
     required init?(coder: NSCoder) {

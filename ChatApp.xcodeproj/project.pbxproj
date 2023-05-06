@@ -33,6 +33,7 @@
 		6A9A376729FAEE6A00809FD4 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9A376629FAEE6A00809FD4 /* RegistrationViewModel.swift */; };
 		6AA7E8F529FEEFBC00C3A31A /* NewMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA7E8F429FEEFBC00C3A31A /* NewMessageController.swift */; };
 		6AA9EC0729FD9370000BE32E /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA9EC0629FD9370000BE32E /* AuthService.swift */; };
+		6AC11C742A06C48C009C88A4 /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC11C732A06C48C009C88A4 /* ChatController.swift */; };
 		6AFFA9A729F6F68900EA2BD7 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFFA9A629F6F68900EA2BD7 /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		6A9A376629FAEE6A00809FD4 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		6AA7E8F429FEEFBC00C3A31A /* NewMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageController.swift; sourceTree = "<group>"; };
 		6AA9EC0629FD9370000BE32E /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		6AC11C732A06C48C009C88A4 /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
 		6AFFA9A629F6F68900EA2BD7 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,6 +133,7 @@
 				6A41DCD529F4433D006F5420 /* Authantication */,
 				6A553D5F29F2F89600C715AA /* ConversationController.swift */,
 				6AA7E8F429FEEFBC00C3A31A /* NewMessageController.swift */,
+				6AC11C732A06C48C009C88A4 /* ChatController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				6A41DCD729F44395006F5420 /* LoginController.swift in Sources */,
 				6A41DCDB29F449D1006F5420 /* Extensions.swift in Sources */,
 				6AFFA9A729F6F68900EA2BD7 /* LoginViewModel.swift in Sources */,
+				6AC11C742A06C48C009C88A4 /* ChatController.swift in Sources */,
 				6A714CC629F532AD0000E882 /* CustomTextField.swift in Sources */,
 				6AA7E8F529FEEFBC00C3A31A /* NewMessageController.swift in Sources */,
 			);
