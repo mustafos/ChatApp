@@ -1,10 +1,3 @@
-//
-//  ChatController.swift
-//  ChatApp
-//
-//  Created by Mustafa Bekirov on 06.05.2023.
-//
-
 import UIKit
 
 class ChatController: UICollectionViewController {
@@ -12,6 +5,11 @@ class ChatController: UICollectionViewController {
     // MARK: – Properties
     
     private let user: User
+    
+    private lazy var customInputView: CustomImputAccessoryView = {
+        let iv = CustomImputAccessoryView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 50))
+        return iv
+    }()
     
     // MARK: – Lifecycle
     
@@ -27,13 +25,20 @@ class ChatController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        
-        print("\(user.username)")
+    }
+    
+    override var inputAccessoryView: UIView? {
+        get { return customInputView }
+    }
+    
+    override var canBecomeFirstResponder: Bool {
+        return true
     }
     
     // MARK: – Helpers
     
     func configureUI() {
         collectionView.backgroundColor = .white
+        configureNavigationBar(withTitle: user.username, prefersLargeTitles: false)
     }
 }
