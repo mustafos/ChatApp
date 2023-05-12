@@ -25,6 +25,7 @@
 		6A714CC629F532AD0000E882 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A714CC529F532AD0000E882 /* CustomTextField.swift */; };
 		6A756D862A00286E00A57C9D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A756D852A00286E00A57C9D /* User.swift */; };
 		6A756D882A00288100A57C9D /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A756D872A00288100A57C9D /* Service.swift */; };
+		6A9108E92A0EA64700D70DAC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9108E82A0EA64700D70DAC /* Constants.swift */; };
 		6A92B63C29FC087E00A01706 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A92B63B29FC087E00A01706 /* GoogleService-Info.plist */; };
 		6A92B63F29FC096200A01706 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6A92B63E29FC096200A01706 /* FirebaseAuth */; };
 		6A92B64129FC096200A01706 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 6A92B64029FC096200A01706 /* FirebaseDatabase */; };
@@ -62,6 +63,7 @@
 		6A714CC529F532AD0000E882 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		6A756D852A00286E00A57C9D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		6A756D872A00288100A57C9D /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		6A9108E82A0EA64700D70DAC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6A92B63B29FC087E00A01706 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6A96318C2A0D0F6200A4C7F2 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		6A9A376629FAEE6A00809FD4 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				6A41DCDA29F449D1006F5420 /* Extensions.swift */,
+				6A9108E82A0EA64700D70DAC /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A553D4F29F2F83900C715AA /* ViewController.swift in Sources */,
+				6A9108E92A0EA64700D70DAC /* Constants.swift in Sources */,
 				6A714CC429F5328E0000E882 /* InputContainerView.swift in Sources */,
 				6A9A376729FAEE6A00809FD4 /* RegistrationViewModel.swift in Sources */,
 				6AA9EC0729FD9370000BE32E /* AuthService.swift in Sources */,
