@@ -8,7 +8,9 @@ struct MessageViewModel {
         return message.isFromCurrentUser ? .systemGray6 : .systemMint
     }
     
-    var messageTextColor: UIColor = .black
+    var messageTextColor: UIColor {
+        return message.isFromCurrentUser ? .black : .white
+    }
     
     var righyAnchorActive: Bool {
         return message.isFromCurrentUser
@@ -20,6 +22,11 @@ struct MessageViewModel {
     
     var shouldHideProfileImage: Bool {
         return message.isFromCurrentUser
+    }
+    
+    var profileImageUrl: URL? {
+        guard let user = message.user else { return nil }
+        return URL(string: user.profileImageUrl)
     }
     
     init(message: Message) {
