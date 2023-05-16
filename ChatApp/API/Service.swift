@@ -34,6 +34,7 @@ struct Service {
             snapshot?.documentChanges.forEach({ change in
                 let dictionary = change.document.data()
                 let message = Message(dictionary: dictionary)
+                
                 self.fetchUser(withUid: message.toId) { user in
                     let conversation = Conversation(user: user, message: message)
                     conversations.append(conversation)
