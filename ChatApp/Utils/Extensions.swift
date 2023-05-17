@@ -45,7 +45,9 @@ extension UIView {
         centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
-    func centerY(inView view: UIView, leftAnchor: NSLayoutXAxisAnchor? = nil, paddingLeft: CGFloat = 0, constant: CGFloat = 0) {
+    func centerY(inView view: UIView, leftAnchor: NSLayoutXAxisAnchor? = nil,
+                 paddingLeft: CGFloat = 0, constant: CGFloat = 0) {
+        
         translatesAutoresizingMaskIntoConstraints = false
         centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: constant).isActive = true
         
@@ -72,12 +74,11 @@ extension UIView {
 }
 
 extension UIViewController {
-    
     static let hud = JGProgressHUD(style: .dark)
-    
+
     func configureGradientLayer() {
         let gradient = CAGradientLayer()
-        gradient.colors = [UIColor.systemMint.cgColor, UIColor.systemCyan.cgColor]
+        gradient.colors = [UIColor.systemCyan.cgColor, UIColor.systemMint.cgColor]
         gradient.locations = [0, 1]
         view.layer.addSublayer(gradient)
         gradient.frame = view.frame
@@ -86,6 +87,7 @@ extension UIViewController {
     func showLoader(_ show: Bool, withText text: String? = "Loading") {
         view.endEditing(true)
         UIViewController.hud.textLabel.text = text
+        
         if show {
             UIViewController.hud.show(in: view)
         } else {
@@ -109,5 +111,11 @@ extension UIViewController {
         navigationController?.navigationBar.isTranslucent = true
         
         navigationController?.navigationBar.overrideUserInterfaceStyle = .dark
+    }
+    
+    func showError(_ errorMessage: String) {
+        let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }
