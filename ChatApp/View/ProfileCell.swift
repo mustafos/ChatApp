@@ -1,6 +1,6 @@
 import UIKit
 
-class ProfileCell:UITableViewCell {
+class ProfileCell: UITableViewCell {
     
     var viewModel: ProfileViewModel? {
         didSet { configure() }
