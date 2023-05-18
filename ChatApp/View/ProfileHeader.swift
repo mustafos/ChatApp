@@ -78,6 +78,7 @@ class ProfileHeader: UIView {
     func configureUI() {
         handleDismissal()
         configureGradientLayer()
+        backgroundColor = .systemMint
         profileImageView.setDimensions(height: 200, width: 200)
         profileImageView.layer.cornerRadius = 200 / 2
         
