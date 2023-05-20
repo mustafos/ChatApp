@@ -17,7 +17,7 @@ class ProfileHeader: UIView {
     private let dismissButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(systemName: "xmark"), for: .normal)
-        button.addTarget(self, action: #selector(handleDismissal), for: .touchUpInside)
+        button.addTarget(ProfileHeader.self, action: #selector(handleDismissal), for: .touchUpInside)
         button.tintColor = .white
         button.imageView?.setDimensions(height: 22, width: 22)
         return button

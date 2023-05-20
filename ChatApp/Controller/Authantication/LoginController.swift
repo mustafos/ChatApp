@@ -6,11 +6,17 @@ protocol AuthenticationControllerProtocol {
     func checkFormStatus()
 }
 
+protocol AuthenticationDelegate: AnyObject {
+    func authenticationComplete()
+}
+
 class LoginController: UIViewController {
     
     // MARK: – Properties
     
     private var viewModel = LoginViewModel()
+    
+    private var delegate: AuthenticationDelegate?
     
     private let iconImage: UIImageView = {
         let iv = UIImageView()
@@ -36,7 +42,7 @@ class LoginController: UIViewController {
         button.setTitleColor(.white, for: .normal)
         button.setHeight(height: 50)
         button.isEnabled = false
-        button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
+        button.addTarget(LoginController.self, action: #selector(handleLogin), for: .touchUpInside)
         return button
     }()
     
@@ -57,7 +63,7 @@ class LoginController: UIViewController {
                                                   attributes: [.font: UIFont.boldSystemFont(ofSize: 16), .foregroundColor: UIColor.white]))
         
         button.setAttributedTitle(attributedTitle, for: .normal)
-        button.addTarget(self, action: #selector(handlerShowSignUp), for: .touchUpInside)
+        button.addTarget(LoginController.self, action: #selector(handlerShowSignUp), for: .touchUpInside)
         
         return button
     }()
@@ -77,17 +83,18 @@ class LoginController: UIViewController {
         showLoader(true, withText: "Loggin in")
         AuthService.shared.loginUserIn(withEmail: email, password: password) { (result, error) in
             if let error = error {
-                print("DEBUG: Failed to login with error \(error.localizedDescription)")
                 self.showLoader(false)
+                self.showError(error.localizedDescription)
                 return
             }
             self.showLoader(false)
-            self.dismiss(animated: true)
+            self.delegate?.authenticationComplete()
         }
     }
     
     @objc func handlerShowSignUp() {
         let controller = RegistrationController()
+        controller.delegate = delegate
         navigationController?.pushViewController(controller, animated: true)
     }
     

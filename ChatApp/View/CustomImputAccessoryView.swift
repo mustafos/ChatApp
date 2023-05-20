@@ -1,6 +1,6 @@
 import UIKit
 
-protocol CustomImputAccessoryViewDelegate: class {
+protocol CustomImputAccessoryViewDelegate: AnyObject {
     func inputView(_ inputView: CustomImputAccessoryView, wantsToSend message: String)
 }
 

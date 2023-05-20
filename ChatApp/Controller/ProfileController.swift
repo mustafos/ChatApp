@@ -3,7 +3,7 @@ import Firebase
 
 private let reuseIdentifier = "ProfileCell"
 
-protocol ProfileControllerDelegate: class {
+protocol ProfileControllerDelegate: AnyObject {
     func handleLogout()
 }
 
@@ -37,9 +37,10 @@ class ProfileController: UITableViewController {
     // MARK: – API
     func fetchUser() {
         guard let uid = Auth.auth().currentUser?.uid else { return }
+        showLoader(true)
         Service.fetchUser(withUid: uid) { user in
+            self.showLoader(false)
             self.user = user
-            print("DEBUG: User is \(user.username)")
         }
     }
 

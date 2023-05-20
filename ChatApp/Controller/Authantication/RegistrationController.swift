@@ -9,13 +9,14 @@ class RegistrationController: UIViewController {
     
     private var viewModel = RegistrationViewModel()
     private var profileImage: UIImage?
+    weak var delegate: AuthenticationDelegate?
     
     private let plusPhotoButton: UIButton = {
         let button = UIButton(type: .custom)
         let largeConfig = UIImage.SymbolConfiguration(pointSize: 100, weight: .bold, scale: .large)
         button.setImage(UIImage(systemName: "person.crop.circle.badge.plus", withConfiguration: largeConfig), for: .normal)
         button.tintColor = .white
-        button.addTarget(self, action: #selector(handleSelectPhoto), for: .touchUpInside)
+        button.addTarget(RegistrationController.self, action: #selector(handleSelectPhoto), for: .touchUpInside)
         button.imageView?.contentMode = .scaleAspectFill
         button.clipsToBounds = true
         return button
@@ -53,7 +54,7 @@ class RegistrationController: UIViewController {
         button.setTitleColor(.white, for: .normal)
         button.setHeight(height: 50)
         button.isEnabled = false
-        button.addTarget(self, action: #selector(handleRegistration), for: .touchUpInside)
+        button.addTarget(RegistrationController.self, action: #selector(handleRegistration), for: .touchUpInside)
         return button
     }()
     
@@ -66,7 +67,7 @@ class RegistrationController: UIViewController {
                                                   attributes: [.font: UIFont.boldSystemFont(ofSize: 16), .foregroundColor: UIColor.white]))
         
         button.setAttributedTitle(attributedTitle, for: .normal)
-        button.addTarget(self, action: #selector(handlerShowLogin), for: .touchUpInside)
+        button.addTarget(RegistrationController.self, action: #selector(handlerShowLogin), for: .touchUpInside)
         
         return button
     }()
@@ -91,12 +92,12 @@ class RegistrationController: UIViewController {
         showLoader(true, withText: "Signing You Up")
         AuthService.shared.createUser(credentials: credentials) { error in
             if let error = error {
-                print("DEBUG: \(error.localizedDescription)")
                 self.showLoader(false)
+                self.showError(error.localizedDescription)
                 return
             }
             self.showLoader(false)
-            self.dismiss(animated: true)
+            self.delegate?.authenticationComplete()
         }
     }
     
