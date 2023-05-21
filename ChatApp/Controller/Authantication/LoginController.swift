@@ -16,7 +16,7 @@ class LoginController: UIViewController {
     
     private var viewModel = LoginViewModel()
     
-    private var delegate: AuthenticationDelegate?
+    weak var delegate: AuthenticationDelegate?
     
     private let iconImage: UIImageView = {
         let iv = UIImageView()
