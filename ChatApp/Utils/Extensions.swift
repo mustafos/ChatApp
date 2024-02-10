@@ -1,6 +1,6 @@
 import UIKit
 import JGProgressHUD
-// some hub
+
 extension UIView {
     func anchor(top: NSLayoutYAxisAnchor? = nil,
                 left: NSLayoutXAxisAnchor? = nil,
